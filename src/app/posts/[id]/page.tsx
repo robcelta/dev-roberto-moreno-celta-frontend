@@ -9,13 +9,15 @@ import { useParams } from "next/navigation";
 import { BiLogoFacebookCircle, BiLogoInstagram } from "react-icons/bi";
 import { FaXTwitter } from "react-icons/fa6";
 
-export default function Post(props: any) {
-  const { socialMediaLinks } = {
-    ...SocialMediaLinks,
-    ...props,
-  };
+export default function Post() {
   const { posts } = usePostContext();
   const { id } = useParams();
+
+  const socialMediaLinks = [
+    { url: "#", icon: <BiLogoFacebookCircle className="size-6" /> },
+    { url: "#", icon: <BiLogoInstagram className="size-6" /> },
+    { url: "#", icon: <FaXTwitter className="size-6 p-0.5" /> },
+  ];
 
   const foundPost = posts.find((post) => post.id.toString() === id);
 
@@ -64,11 +66,3 @@ export default function Post(props: any) {
     </>
   );
 }
-
-export const SocialMediaLinks: any = {
-  socialMediaLinks: [
-    { url: "#", icon: <BiLogoFacebookCircle className="size-6" /> },
-    { url: "#", icon: <BiLogoInstagram className="size-6" /> },
-    { url: "#", icon: <FaXTwitter className="size-6 p-0.5" /> },
-  ],
-};
