@@ -11,7 +11,7 @@ import { FaXTwitter } from "react-icons/fa6";
 
 export default function Post(props: any) {
   const { socialMediaLinks } = {
-    ...icons,
+    ...SocialMediaLinks,
     ...props,
   };
   const { posts } = usePostContext();
@@ -65,7 +65,7 @@ export default function Post(props: any) {
   );
 }
 
-export const icons: any = {
+export const SocialMediaLinks: any = {
   socialMediaLinks: [
     { url: "#", icon: <BiLogoFacebookCircle className="size-6" /> },
     { url: "#", icon: <BiLogoInstagram className="size-6" /> },
