@@ -54,7 +54,7 @@ export const BlogWrapper = () => {
             <Tabs
               value={activeTab}
               onValueChange={setActiveTab}
-              className="flex flex-col justify-start w-[400px] lg:w-[976px]"
+              className="flex flex-col justify-start w-[350px] lg:w-[976px]"
             >
               <TabsList className="no-scrollbar mb-12 flex w-full items-center overflow-auto">
                 <TabsTrigger
@@ -88,15 +88,15 @@ export const BlogWrapper = () => {
                       {currentFilteredPosts.slice(0, 3).map((post, index) => (
                         <div
                           key={index}
-                          className={`lg:col-span-3 mb-4 row-span-1 lg:row-span-${
-                            index === 0 ? 3 : 6
-                          }  lg:${index === 0 ? "lg:col-start-4" : ""} `}
+                          className={`mb-4 row-span-1 lg:col-span-3 lg:row-span-1 ${
+                            index === 0
+                              ? "lg:col-start-1 lg:row-span-2"
+                              : "lg:col-start-4 lg:row-span-1"
+                          }`}
                           style={{
                             height:
                               screenWidth <= 640
-                                ? index === 0
-                                  ? "378px"
-                                  : "378px"
+                                ? "378px"
                                 : index === 0
                                 ? "783px"
                                 : "379px",
@@ -110,59 +110,56 @@ export const BlogWrapper = () => {
                         </div>
                       ))}
                     </div>
+
                     <div className="col-span-4 row-span-3 mt-6 mb-6 ml-6">
                       <Banner />
                     </div>
 
                     <div className="grid grid-cols-1 grid-rows-auto lg:grid-cols-6 lg:gap-6 ml-6">
-                      {currentFilteredPosts.slice(3, 6).map((post, index) => {
-                        // Swap positions: Move index 0 to the right, index 1 and 2 to the left
-                        const newIndex = index === 0 ? 2 : index === 1 ? 0 : 1;
-
-                        return (
-                          <div
-                            key={index}
-                            className={`lg:col-span-3 mb-4 row-span-1 lg:row-span-${
-                              newIndex === 2 ? 3 : 6
-                            } lg:${newIndex === 2 ? "col-start-4" : ""}`}
-                            style={{
-                              height:
-                                screenWidth <= 640
-                                  ? "378px"
-                                  : newIndex === 2
-                                  ? "783px"
-                                  : "379px",
-                            }}
-                          >
-                            <BlogPostCard
-                              data={post}
-                              width="100%"
-                              height="100%"
-                            />
-                          </div>
-                        );
-                      })}
+                      {currentFilteredPosts.slice(3, 6).map((post, index) => (
+                        <div
+                          key={index}
+                          className={`mb-4 row-span-1 lg:col-span-3 lg:row-span-1 ${
+                            index === 2
+                              ? "lg:col-start-4 lg:row-span-6 lg:row-start-1"
+                              : "lg:col-start-1 lg:row-span-3"
+                          }`}
+                          style={{
+                            height:
+                              screenWidth <= 640
+                                ? "378px"
+                                : index === 2
+                                ? "783px"
+                                : "379px",
+                          }}
+                        >
+                          <BlogPostCard
+                            data={post}
+                            width="100%"
+                            height="100%"
+                          />
+                        </div>
+                      ))}
                     </div>
 
                     <div className="grid grid-cols-1 grid-rows-auto lg:grid-cols-6 lg:gap-6 ml-6">
                       {currentFilteredPosts.slice(6, 9).map((post, index) => (
                         <div
                           key={index}
-                          className={`lg:col-span-3 mb-4 row-span-1 lg:row-span-${
-                            index === 0 ? 3 : 6
-                          }  lg:${index === 0 ? "lg:col-start-4" : ""} `}
+                          className={`mb-4 row-span-1 lg:col-span-3 lg:row-span-1 ${
+                            index === 0
+                              ? "lg:col-start-1 lg:row-span-2"
+                              : "lg:col-start-4 lg:row-span-1"
+                          }`}
                           style={{
                             height:
                               screenWidth <= 640
-                                ? index === 0
-                                  ? "378px"
-                                  : "378px"
+                                ? "378px"
                                 : index === 0
                                 ? "783px"
                                 : "379px",
                           }}
                         >
-                          {index}
                           <BlogPostCard
                             data={post}
                             width="100%"

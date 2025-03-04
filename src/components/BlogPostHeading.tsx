@@ -27,13 +27,13 @@ export const BlogPostHeading = (props: Layout4Props) => {
 
   const titleClass =
     variant === "hero"
-      ? "text-white font-bold text-[18px] md:text-[41px] leading-[130%] w-[300px] md:w-[509px] h-[159px]"
+      ? "text-white font-bold text-[18px] md:text-[41px] leading-[130%] w-[250px] md:w-[509px] h-[159px]"
       : "text-black font-semibold text-[21px] leading-[150%] w-auto h-[159px]"; // Updated for non-hero to text-black
 
   const footerClass =
     variant === "hero"
-      ? "flex flex-row justify-between items-center w-[300px] md:w-[509px] h-[29px] text-white"
-      : "flex flex-row justify-between items-center w-[240px] md:w-auto h-[40px] md:h-[29px] text-black"; // Ensure footer text color changes
+      ? "flex flex-row justify-between items-center w-[250px] md:w-[509px] h-[29px] text-white"
+      : "flex flex-row justify-between items-center w-[200px] pb-4 md:w-auto h-[50px] md:h-[29px] text-black"; // Ensure footer text color changes
 
   // Fixing inner section background color
   const innerClass =

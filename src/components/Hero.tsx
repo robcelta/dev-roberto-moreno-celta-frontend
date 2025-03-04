@@ -14,7 +14,7 @@ export const HeroHeader = () => {
             Today story
           </h1>
         </div>
-        <div className="relative flex flex-col items-start justify-center p-6 w-[380px] sm:w-[430px] h-[378px] lg:h-[40rem] md:p-16 md:w-auto md:h-auto ">
+        <div className="relative flex flex-col items-start justify-center p-6 w-[350px] h-[378px] lg:h-[40rem] md:p-16 md:w-auto md:h-auto ">
           <div>
             <BlogPostHeading
               title={firstPost?.attributes.title}
