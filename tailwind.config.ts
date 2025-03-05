@@ -13,6 +13,9 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      fontFamily: {
+        custom: ["space-grotesk-variable", "sans-serif"],
+      },
     },
   },
   plugins: [],

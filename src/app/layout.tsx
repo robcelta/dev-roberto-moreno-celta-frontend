@@ -15,6 +15,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="stylesheet" href="https://use.typekit.net/dhe4cqn.css" />
+      </head>
       <body className="bg-black">
         <PostProvider>
           <Navbar />

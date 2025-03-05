@@ -1,8 +1,7 @@
 "use client";
 
-import { RxChevronRight } from "react-icons/rx";
+import { RxChevronLeft } from "react-icons/rx";
 import Link from "next/link";
-import { useEffect, useState } from "react";
 
 type Props = {
   title: string;
@@ -48,6 +47,17 @@ export const BlogPostHeading = (props: Layout4Props) => {
 
   return (
     <div>
+      {variant === "post" ? (
+        <Link
+          href={"/"}
+          className="flex flex-row items-center justify-center text-white w-[65px] h-[29px] text-[16px] font-semibold leading-[150%]"
+        >
+          <RxChevronLeft />
+          <h6>Blog</h6>
+        </Link>
+      ) : (
+        <></>
+      )}
       {/* Container with dynamic background color */}
       <div className={containerClass}>
         {/* Tag */}
@@ -80,17 +90,20 @@ export const BlogPostHeading = (props: Layout4Props) => {
 
         {/* Footer */}
         <div className={footerClass}>
-          {/* Read More Link */}
-          <Link
-            href={`/posts/${id}`}
-            className="flex flex-row items-center justify-center w-[65px] h-[29px] text-[16px] font-semibold leading-[150%]"
-          >
-            <h6>Read</h6>
-            <img
-              src="https://cdn.prod.website-files.com/676717bdd1bb0b2e7b883d09/67c60e55403b620bdad81d8e_icon%20(1).png"
-              alt="line"
-            />
-          </Link>
+          {variant === "post" ? (
+            <></>
+          ) : (
+            <Link
+              href={`/posts/${id}`}
+              className="flex flex-row items-center justify-center w-[65px] h-[29px] text-[16px] font-semibold leading-[150%]"
+            >
+              <h6>Read</h6>
+              <img
+                src="https://cdn.prod.website-files.com/676717bdd1bb0b2e7b883d09/67c60e55403b620bdad81d8e_icon%20(1).png"
+                alt="line"
+              />
+            </Link>
+          )}
 
           {/* Read Time */}
           <div className="flex flex-row justify-center items-center w-auto h-[16px]">
