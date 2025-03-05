@@ -1,12 +1,7 @@
 "use client";
 
 import { FaXTwitter } from "react-icons/fa6";
-import {
-  BiLogoFacebookCircle,
-  BiLogoInstagram,
-  BiLogoLinkedinSquare,
-  BiLogoYoutube,
-} from "react-icons/bi";
+import { BiLogoFacebookCircle, BiLogoInstagram } from "react-icons/bi";
 
 type SocialMediaLinks = {
   url: string;
@@ -15,25 +10,26 @@ type SocialMediaLinks = {
 
 type Props = {
   socialMediaLinks: SocialMediaLinks[];
+  background: string;
 };
 
 export type FooterProps = React.ComponentPropsWithoutRef<"section"> &
   Partial<Props>;
 
 export const Footer = (props: FooterProps) => {
-  const { socialMediaLinks } = {
+  const { socialMediaLinks, background } = {
     ...FooterProps,
     ...props,
   };
   return (
     <footer
       id="relume"
-      className="px-[5%] py-12 md:py-18 lg:py-20 mb-20 md:mb-0"
+      className={`px-[5%] py-12 md:py-18 lg:py-20 md:mb-0 ${background}`}
     >
       <div className="container bg-purple-500">
         <div className="grid grid-cols-1 gap-x-[4vw] gap-y-12  p-8 md:gap-y-16 md:p-12 lg:grid-cols-[1fr_0.5fr] lg:gap-y-4">
           <div>
-            <div className="rb-6 mb-6 md:mb-8">
+            <div className="rb-6 mb-6 md:mb-8 flex justify-center align-center md:block">
               <a href={"/"}>
                 <svg
                   width="179"
@@ -109,17 +105,19 @@ export const Footer = (props: FooterProps) => {
                 </svg>
               </a>
             </div>
+            <p className="text-white text-center lg:text-left">
+              © Copyright Lite-Tech. All Rights Reserved
+            </p>
           </div>
-        </div>
-        <div className="flex flex-col justify-between text-white text-sm md:flex-row md:items-center pb-6 ml-6 mr-6">
-          <p>© Copyright Lite-Tech. All Rights Reserved</p>
-          <ul className="grid grid-flow-row grid-cols-3  md:grid-cols-[max-content] justify-center gap-y-4 text-sm md:grid-flow-col md:gap-x-6 md:gap-y-0">
-            {socialMediaLinks.map((link, index) => (
-              <a key={index} href={link.url}>
-                {link.icon}
-              </a>
-            ))}
-          </ul>
+          <div className="flex flex-col justify-between text-white text-sm md:flex-row md:items-center pb-6 ml-6 md:justify-end">
+            <ul className="grid grid-flow-row grid-cols-3 md:grid-cols-[max-content] justify-center gap-y-4 text-sm md:grid-flow-col md:gap-x-6 md:gap-y-0 md:justify-end">
+              {socialMediaLinks.map((link, index) => (
+                <a key={index} href={link.url}>
+                  {link.icon}
+                </a>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
     </footer>
@@ -132,4 +130,5 @@ export const FooterProps: Props = {
     { url: "#", icon: <BiLogoInstagram className="size-6" /> },
     { url: "#", icon: <FaXTwitter className="size-6 p-0.5" /> },
   ],
+  background: "",
 };

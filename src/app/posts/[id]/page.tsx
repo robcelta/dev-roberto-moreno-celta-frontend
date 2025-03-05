@@ -60,9 +60,7 @@ export default function Post() {
         </div>
       </section>
       <RelatedPost />
-      <div className="bg-white">
-        <Footer />
-      </div>
+      <Footer background="bg-white" />
     </>
   );
 }

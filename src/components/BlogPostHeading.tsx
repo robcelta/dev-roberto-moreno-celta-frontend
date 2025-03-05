@@ -28,28 +28,43 @@ export const BlogPostHeading = (props: Layout4Props) => {
   const titleClass =
     variant === "hero"
       ? "text-white font-bold text-[18px] md:text-[41px] leading-[130%] w-[250px] md:w-[509px] h-[159px]"
-      : "text-black font-semibold text-[21px] leading-[150%] w-auto h-[159px]"; // Updated for non-hero to text-black
+      : "text-black font-semibold text-[16px] lg:text-[22px] leading-[150%] w-auto h-auto mb-6"; // Updated for non-hero to text-black
 
   const footerClass =
     variant === "hero"
       ? "flex flex-row justify-between items-center w-[250px] md:w-[509px] h-[29px] text-white"
-      : "flex flex-row justify-between items-center w-[200px] pb-4 md:w-auto h-[50px] md:h-[29px] text-black"; // Ensure footer text color changes
+      : "flex flex-row justify-between items-center w-[200px] pb-4 md:w-auto h-auto md:h-[29px] text-black"; // Ensure footer text color changes
 
   // Fixing inner section background color
   const innerClass =
     variant === "hero"
       ? "absolute bottom-6 left-6 flex flex-col justify-between p-6 w-auto md:w-[557px] h-[144px] md:h-[246px] bg-black"
-      : "bottom-6 left-6 flex flex-col justify-between p-6 w-auto h-[144px] bg-white"; // Change inner section bg
+      : "bottom-6 left-6 flex flex-col justify-between p-6 w-auto h-auto bg-white"; // Change inner section bg
 
   // Topic text color update
   const authorTextClass = variant === "post" ? "text-[#595959]" : "text-black"; // Topic text color for non-hero, can be adjusted
+  const isPostBackground =
+    variant === "post" ? "bg-transparent" : "bg-[#D8F34E]";
 
   return (
     <div>
       {/* Container with dynamic background color */}
       <div className={containerClass}>
         {/* Tag */}
-        <div className="flex justify-center items-center px-3 py-1 h-[30px] bg-[#D8F34E] rounded-full m-0">
+        <div
+          className={`flex justify-center items-center px-3 py-1 h-[30px] ${isPostBackground} rounded-full m-0`}
+        >
+          {variant === "post" ? (
+            <div className="w-10 h-10 rounded-full overflow-hidden flex-none order-0 flex-grow-0 mr-6">
+              <img
+                src="https://cdn.prod.website-files.com/675ad6c2f9f6720963b16a55/675c5a332754d6ecc7ddbf06_freepik__male-person__88167.jpeg"
+                alt="avatar"
+                className="w-full h-full object-cover"
+              />
+            </div>
+          ) : (
+            ""
+          )}
           <p
             className={` h-[22px] font-semibold text-[14px] leading-[160%] ${authorTextClass} m-0`}
           >

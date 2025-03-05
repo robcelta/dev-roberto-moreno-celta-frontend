@@ -170,14 +170,16 @@ export const BlogWrapper = () => {
                     </div>
 
                     {/* Load More Button */}
-                    <div className="grid grid-cols-1 col-span-4 row-span-3 mt-6 mb-6 ml-6 lg:grid-cols-5 lg:grid-rows-1 gap-6 mt-6">
-                      <Button className="lg:col-start-3 flex flex-col justify-center items-center p-1 gap-2.5 w-[300px] lg:w-[155px] h-[56px] bg-[#D8F34E]">
-                        <div className="flex flex-row justify-center items-center p-4 w-[155px] h-[45px] flex-none order-0 align-self-stretch">
-                          <span className="w-auto text-center text-black font-medium text-[18px] leading-[135%] flex-none order-1">
-                            Load More
-                          </span>
-                        </div>
-                      </Button>
+                    <div className="col-span-4 row-span-3 mt-6 mb-6 ml-6">
+                      <div className="grid grid-cols-1 col-span-4 row-span-3 mt-6 mb-6 ml-6 lg:grid-cols-5 lg:grid-rows-1 gap-6 mt-6">
+                        <Button className="lg:col-start-3 flex flex-col justify-center items-center p-1 gap-2.5 w-[300px] lg:w-[155px] h-[56px] bg-[#D8F34E]">
+                          <div className="flex flex-row justify-center items-center p-4 w-[155px] h-[45px] flex-none order-0 align-self-stretch">
+                            <span className="w-auto text-center text-black font-medium text-[18px] leading-[135%] flex-none order-1">
+                              Load More
+                            </span>
+                          </div>
+                        </Button>
+                      </div>
                     </div>
                   </MotionTabsContent>
                 )}

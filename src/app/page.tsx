@@ -7,9 +7,7 @@ export default function Home() {
     <>
       <HeroHeader />
       <BlogWrapper />
-      <div className="bg-black">
-        <Footer />
-      </div>
+      <Footer background="bg-black" />
     </>
   );
 }

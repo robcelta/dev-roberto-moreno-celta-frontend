@@ -6,7 +6,6 @@ export const PostHeader = (props: any) => {
   const { data } = {
     ...props,
   };
-  console.log(data);
   return (
     <section id="relume" className="relative px-[5%]">
       <div className="container">
