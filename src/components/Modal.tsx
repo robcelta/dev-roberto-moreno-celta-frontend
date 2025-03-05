@@ -58,7 +58,7 @@ export const AddNewPost = () => {
         </button>
 
         {formSubmitted ? (
-          <div className="flex flex-col items-center gap-8 text-center">
+          <div className="flex flex-col items-center gap-8 text-center text-black">
             <p className="text-lg">Your post was successfully uploaded!</p>
             <Button
               onClick={() => {
